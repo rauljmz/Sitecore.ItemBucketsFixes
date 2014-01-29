@@ -51,11 +51,10 @@
     <Compile Include="Helpers\References.cs" />
     <Compile Include="Pipelines\BucketOperationProcessor.cs" />
     <Compile Include="Pipelines\CreateBucket\CreateBucketProcessor.cs" />
+    <Compile Include="Pipelines\SyncBucket\SyncBucketProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pipelines\SyncBucket\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Sitecore.Buckets.Pipelines;
 using Sitecore.Buckets.Util;
+using Sitecore.Data.Items;
+using Sitecore.Data.Managers;
 using Sitecore.Diagnostics;
 using Sitecore.Exceptions;
 using Sitecore.ItemBuckets.Helpers;
 using Sitecore.Reflection;
+using Sitecore.SecurityModel;
 
 namespace Sitecore.ItemBuckets.Pipelines
 {
@@ -36,6 +39,13 @@ namespace Sitecore.ItemBuckets.Pipelines
         {
             return StringUtil.GetString(topParent[References.__DynamicFolderPath], BucketConfigurationSettings.DynamicBucketFolderPath);
         }
+
+        protected virtual bool MoveItem(Item item, Item destination)
+        {
+            return ItemManager.MoveItem(item, destination, SecurityCheck.Disable);
+        }
+
+ 
 
 
 

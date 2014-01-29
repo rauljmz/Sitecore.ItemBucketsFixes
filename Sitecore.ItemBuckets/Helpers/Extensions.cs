@@ -14,5 +14,19 @@ namespace Sitecore.ItemBuckets.Helpers
         {
             return item.Fields[Sitecore.Buckets.Util.Constants.IsBucket];
         }
+
+        public static bool IsLockedChildRelationship(this Item item)
+        {
+            if ((item != null) && (item.Fields[Sitecore.Buckets.Util.Constants.ShouldNotOrganizeInBucket] != null))
+            {
+                return (item.Fields[Sitecore.Buckets.Util.Constants.ShouldNotOrganizeInBucket].Value == "1");
+            }
+            return true;
+        }
+
+ 
+
+ 
+
     }
 }
