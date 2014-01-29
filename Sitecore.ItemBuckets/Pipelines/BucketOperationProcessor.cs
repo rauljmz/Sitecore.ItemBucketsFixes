@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sitecore.Buckets.Pipelines;
+using Sitecore.Buckets.Util;
+using Sitecore.Diagnostics;
+using Sitecore.Exceptions;
 using Sitecore.ItemBuckets.Helpers;
+using Sitecore.Reflection;
 
 namespace Sitecore.ItemBuckets.Pipelines
 {
-    public class BucketOperationProcessor<T> : Sitecore.Buckets.Pipelines.BucketOperations.BucketOperationProcessor<T>
+    public abstract class BucketOperationProcessor<TArgs> : Sitecore.Buckets.Pipelines.BucketOperations.BucketOperationProcessor<TArgs> where TArgs : BucketsPipelineArgs
+
     {
         protected override string GetDestinationFolderPath(Data.Items.Item topParent, DateTime childItemCreationDateTime, Data.ID itemToMove)
         {
@@ -23,7 +29,7 @@ namespace Sitecore.ItemBuckets.Pipelines
             {
                 str = "Repository";
             }
-            return (topParent.Paths.FullPath + Constants.ContentPathSeperator + str);
+            return (topParent.Paths.FullPath + Sitecore.Buckets.Util.Constants.ContentPathSeperator + str);
         }
 
         protected virtual string GetDynamicFolderPathType(Data.Items.Item topParent)
