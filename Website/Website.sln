@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.ItemBuckets", "..\Sitecore.ItemBuckets\Sitecore.ItemBuckets.csproj", "{00266930-67CD-45CC-A941-C76B78CF14A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "..\Tests\Tests.csproj", "{CAC24F96-C735-4810-A3DE-429CCF6DEB9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{00266930-67CD-45CC-A941-C76B78CF14A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00266930-67CD-45CC-A941-C76B78CF14A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00266930-67CD-45CC-A941-C76B78CF14A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC24F96-C735-4810-A3DE-429CCF6DEB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC24F96-C735-4810-A3DE-429CCF6DEB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC24F96-C735-4810-A3DE-429CCF6DEB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC24F96-C735-4810-A3DE-429CCF6DEB9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
