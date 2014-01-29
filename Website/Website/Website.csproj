@@ -70,7 +70,7 @@
     <ProjectReference Include="..\..\Sitecore.ItemBuckets\Sitecore.ItemBuckets.csproj">
       <Project>{00266930-67cd-45cc-a941-c76b78cf14a3}</Project>
       <Name>Sitecore.ItemBuckets</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
