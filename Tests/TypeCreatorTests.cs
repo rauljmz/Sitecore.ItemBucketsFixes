@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Sitecore.ItemBuckets.TypeCreator;
 using Xunit;
 using Should;
+using System.Collections.Specialized;
 
 namespace Tests
 {
@@ -15,18 +16,17 @@ namespace Tests
         public void Should_return_valid_type()
         {
             var parameters = new System.Collections.Specialized.NameValueCollection();
-          
-            var tdef = new TypeDefinition()
-            {
-               TypeName = string.Format("{0},{1}",typeof(TestObject).FullName,typeof(TestObject).Assembly.GetName().Name ),
+            var testObject = new TestObject();
+            var tdef = new TestTypeDefinition(testObject)
+            {            
                Parameters = parameters                
             }; 
            
-            ITypeCreator<TestObject> creator = new TypeCreator<TestObject>();
+            IObjectCreator<TestObject> creator = new ObjectCreator<TestObject>();
 
             var result = creator.Create(tdef);
 
-            result.ShouldBeType<TestObject>();          
+            result.ShouldBeType(testObject.GetType());          
         }
 
         [Fact]
@@ -34,13 +34,12 @@ namespace Tests
         {
             var parameters = new System.Collections.Specialized.NameValueCollection();
             parameters.Add("MyProperty","5");
-            var tdef = new TypeDefinition()
-            {
-                TypeName = string.Format("{0},{1}", typeof(TestObject).FullName, typeof(TestObject).Assembly.GetName().Name),
+            var tdef = new TestTypeDefinition(new TestObject())
+            {                
                Parameters = parameters                
             }; 
            
-            ITypeCreator<TestObject> creator = new TypeCreator<TestObject>();
+            IObjectCreator<TestObject> creator = new ObjectCreator<TestObject>();
 
             var result = creator.Create(tdef);
 
@@ -53,22 +52,40 @@ namespace Tests
         {
             var parameters = new System.Collections.Specialized.NameValueCollection();
             
-            var tdef = new TypeDefinition()
-            {
-                TypeName = string.Format("{0},{1}", typeof(TestObject).FullName, typeof(TestObject).Assembly.GetName().Name),
+            var tdef = new TestTypeDefinition(new TestObject())
+            {               
                 Parameters = parameters
             };
 
-            ITypeCreator<string> creator = new TypeCreator<string>();
+            IObjectCreator<string> creator = new ObjectCreator<string>();
 
             Action action = () => creator.Create(tdef);
 
             action.ShouldThrow<InvalidCastException>();     
         }
     }
-    s
+    
     public class TestObject
     {
         public string MyProperty { get; set; }
+    }
+
+    public class TestTypeDefinition : ITypeDefinition
+    {
+        public TestTypeDefinition(Object o)
+        {
+            TypeName = string.Format("{0},{1}", o.GetType().FullName, o.GetType().Assembly.GetName().Name);
+        }
+        public NameValueCollection Parameters
+        {
+            get;
+            set;
+        }
+
+        public string TypeName
+        {
+            get;
+            set;
+        }
     }
 }

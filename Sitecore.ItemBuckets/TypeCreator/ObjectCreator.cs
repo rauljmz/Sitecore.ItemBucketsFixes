@@ -7,9 +7,9 @@ using Sitecore.Reflection;
 
 namespace Sitecore.ItemBuckets.TypeCreator
 {
-    public class TypeCreator<T> : ITypeCreator<T>
+    public class ObjectCreator<T> : IObjectCreator<T>
     {
-        public virtual T Create(TypeDefinition def)
+        public virtual T Create(ITypeDefinition def)
         {
             var objectCreated = ReflectionUtil.CreateObject(def.TypeName);
             if (objectCreated is T)
@@ -20,7 +20,7 @@ namespace Sitecore.ItemBuckets.TypeCreator
             throw new InvalidCastException();
         }
 
-        public virtual void AssignParameters(object o, TypeDefinition def)
+        public virtual void AssignParameters(object o, ITypeDefinition def)
         {
             foreach (var key in def.Parameters.AllKeys)
             {

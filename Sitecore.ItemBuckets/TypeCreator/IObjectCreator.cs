@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Sitecore.ItemBuckets.TypeCreator
 {
-    public interface ITypeCreator<T>
+    public interface IObjectCreator<T>
     {
-        T Create(TypeDefinition def);
+        T Create(ITypeDefinition def);
     }
 }

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Sitecore.Buckets.Util;
 using Sitecore.Caching;
 using Sitecore.Data;
+using Sitecore.ItemBuckets.Types;
 
 namespace Sitecore.ItemBuckets.DynamicFolders
 {
-    public class DynamicFolderCache : Dictionary<ID,IDynamicBucketFolderPath>
+    public class DynamicFolderCache : Dictionary<Guid, IDynamicFolderPath>
     {
         
     }

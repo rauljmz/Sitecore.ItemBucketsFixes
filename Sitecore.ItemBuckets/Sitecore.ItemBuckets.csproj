@@ -50,15 +50,20 @@
     <Compile Include="DynamicFolders\DateBasedDynamicFolder.cs" />
     <Compile Include="DynamicFolders\DynamicFolderCache.cs" />
     <Compile Include="DynamicFolders\DynamicFolderSwitcher.cs" />
+    <Compile Include="DynamicFolders\DynamicFolderSwitcherBootstrap.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\References.cs" />
     <Compile Include="Pipelines\BucketOperationProcessor.cs" />
     <Compile Include="Pipelines\CreateBucket\CreateBucketProcessor.cs" />
     <Compile Include="Pipelines\SyncBucket\SyncBucketProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TypeCreator\TypeCreator.cs" />
-    <Compile Include="TypeCreator\ITypeCreator.cs" />
+    <Compile Include="TypeCreator\ITypeDefinition.cs" />
+    <Compile Include="TypeCreator\ObjectCreator.cs" />
+    <Compile Include="TypeCreator\IObjectCreator.cs" />
     <Compile Include="TypeCreator\TypeDefinition.cs" />
+    <Compile Include="Types\BucketItem.cs" />
+    <Compile Include="Types\IBucket.cs" />
+    <Compile Include="Types\IDynamicFolderPath.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
