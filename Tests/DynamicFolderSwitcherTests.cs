@@ -8,6 +8,7 @@ using Sitecore.ItemBuckets.TypeCreator;
 using Sitecore.ItemBuckets.Types;
 using Xunit;
 using Should;
+using Sitecore.ItemBuckets.DynamicFolderPathResolvers;
 
 namespace Tests
 {
@@ -17,13 +18,13 @@ namespace Tests
         public void Should_Return_Same_Object()
         {
             var testDynamicFolderPath = new TestDynamicFolderPath();
-            var switcher = new DynamicFolderSwitcher(new DynamicFolderCache(), new TestObjectCreator<IDynamicFolderPath>(testDynamicFolderPath));
+            var switcher = new DynamicFolderSwitcher(new DynamicFolderCache(), new TestObjectCreator<IDynamicFolderResolver>(testDynamicFolderPath));
             var bucket = new BucketItemTest() { Id = Guid.NewGuid(), DynamicFolderPath = new TestTypeDefinition(testDynamicFolderPath) };
 
-            var result1 = switcher.GetFolderPath(bucket);
-            var result2 = switcher.GetFolderPath(bucket);
+            var result1 = switcher.GetFolderPathResolver(bucket);
+            var result2 = switcher.GetFolderPathResolver(bucket);
 
-            result1.ShouldImplement<IDynamicFolderPath>();         
+            result1.ShouldImplement<IDynamicFolderResolver>();         
             result1.ShouldBeSameAs(result2);
         }        
     }
@@ -45,7 +46,7 @@ namespace Tests
 
     
 
-    public class TestDynamicFolderPath : IDynamicFolderPath
+    public class TestDynamicFolderPath : IDynamicFolderResolver
     {
         public string GetFolderPath(Guid newItemId, Guid parentItemId, DateTime creationDateOfNewItem)
         {

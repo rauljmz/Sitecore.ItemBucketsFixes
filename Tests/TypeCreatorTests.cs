@@ -7,6 +7,7 @@ using Sitecore.ItemBuckets.TypeCreator;
 using Xunit;
 using Should;
 using System.Collections.Specialized;
+using Sitecore.ItemBuckets.Types;
 
 namespace Tests
 {

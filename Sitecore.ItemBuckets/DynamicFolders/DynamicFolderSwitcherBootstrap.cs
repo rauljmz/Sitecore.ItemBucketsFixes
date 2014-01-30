@@ -10,6 +10,7 @@ namespace Sitecore.ItemBuckets.DynamicFolders
     public class DynamicFolderSwitcherBootstrap : IDynamicBucketFolderPath
     {
         private static DynamicFolderSwitcher switcher;
+
         public DynamicFolderSwitcherBootstrap()
         {
             if (DynamicFolderSwitcherBootstrap.switcher == null)
@@ -17,9 +18,14 @@ namespace Sitecore.ItemBuckets.DynamicFolders
                 DynamicFolderSwitcherBootstrap.switcher = new DynamicFolderSwitcher();
             }
         }
+
         public string GetFolderPath(Data.ID newItemId, Data.ID parentItemId, DateTime creationDateOfNewItem)
         {
-            throw new NotImplementedException();
+            var bucket = new Types.BucketItem(Sitecore.Context.ContentDatabase.GetItem(parentItemId));
+
+            var dynamicFolderPathResolver = switcher.GetFolderPathResolver(bucket);
+
+            return dynamicFolderPathResolver.GetFolderPath(newItemId.Guid, parentItemId.Guid, creationDateOfNewItem);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Sitecore.Buckets.Util;
 using Sitecore.Data.Items;
 using Sitecore.Events;
+using Sitecore.ItemBuckets.DynamicFolderPathResolvers;
 using Sitecore.ItemBuckets.TypeCreator;
 using Sitecore.ItemBuckets.Types;
 
@@ -23,10 +24,10 @@ namespace Sitecore.ItemBuckets.DynamicFolders
             set { _cache = value; }
         }
 
-        public IObjectCreator<IDynamicFolderPath> TypeCreator { get; set; }
+        public IObjectCreator<IDynamicFolderResolver> TypeCreator { get; set; }
 
-        public DynamicFolderSwitcher() : this(new DynamicFolderCache(), new ObjectCreator<IDynamicFolderPath>()) { }
-        public DynamicFolderSwitcher(DynamicFolderCache cache, IObjectCreator<IDynamicFolderPath> creator)
+        public DynamicFolderSwitcher() : this(new DynamicFolderCache(), new ObjectCreator<IDynamicFolderResolver>()) { }
+        public DynamicFolderSwitcher(DynamicFolderCache cache, IObjectCreator<IDynamicFolderResolver> creator)
         {
             Sitecore.Events.Event.Subscribe("item:saved", SavedItem);
             TypeCreator = creator;
@@ -42,7 +43,7 @@ namespace Sitecore.ItemBuckets.DynamicFolders
             Cache.Remove(savedItem.ID.Guid);
         }
 
-        public virtual IDynamicFolderPath GetFolderPath(IBucket bucket)
+        public virtual IDynamicFolderResolver GetFolderPathResolver(IBucket bucket)
         {
 
             if (Cache.ContainsKey(bucket.Id))
