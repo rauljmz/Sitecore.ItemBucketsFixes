@@ -48,7 +48,7 @@ namespace Tests
 
     public class TestDynamicFolderPath : IDynamicFolderResolver
     {
-        public string GetFolderPath(Guid newItemId, Guid parentItemId, DateTime creationDateOfNewItem)
+        public string GetFolderPath(IItem newItemId, IBucket parentItemId, DateTime creationDateOfNewItem)
         {
             throw new NotImplementedException();
         }
@@ -65,6 +65,11 @@ namespace Tests
         public Guid Id
         {
             get ; set;
+        }
+
+        public DateTime GetDateField(string idOrName)
+        {
+            throw new NotImplementedException();
         }
     }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
 using Sitecore.ItemBuckets.Helpers;
@@ -10,8 +11,13 @@ using Sitecore.ItemBuckets.TypeCreator;
 
 namespace Sitecore.ItemBuckets.Types
 {
-    public class BucketItem : CustomItem, IBucket
+    public class BucketItem : SitecoreItem, IBucket
     {
+        public static BucketItem Create(ID id)
+        {
+            return new BucketItem(MakeItemFromID(id));
+        } 
+
         public BucketItem(Item item) : base(item) { }
 
         public ITypeDefinition DynamicFolderPath
@@ -26,12 +32,6 @@ namespace Sitecore.ItemBuckets.Types
                 return null;
             }
            
-        }
-
-
-        public Guid Id
-        {
-            get { return ID.ToGuid(); }
-        }
+        }      
     }
 }

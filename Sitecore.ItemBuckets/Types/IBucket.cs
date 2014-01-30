@@ -8,9 +8,8 @@ using Sitecore.ItemBuckets.TypeCreator;
 
 namespace Sitecore.ItemBuckets.Types
 {
-    public interface IBucket
+    public interface IBucket : IItem
     {
-        ITypeDefinition DynamicFolderPath { get;  }
-        Guid Id { get; }
+        ITypeDefinition DynamicFolderPath { get;  }    
     }
 }

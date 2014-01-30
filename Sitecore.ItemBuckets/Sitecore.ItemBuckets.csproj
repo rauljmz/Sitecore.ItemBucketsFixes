@@ -47,16 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DynamicFolderPathResolvers\DateBasedDynamicFolderResolver.cs" />
     <Compile Include="DynamicFolders\DateBasedDynamicFolder.cs" />
     <Compile Include="DynamicFolders\DynamicFolderCache.cs" />
     <Compile Include="DynamicFolders\DynamicFolderSwitcher.cs" />
     <Compile Include="DynamicFolders\DynamicFolderSwitcherBootstrap.cs" />
+    <Compile Include="Types\SitecoreItem.cs" />
     <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Helpers\References.cs" />
     <Compile Include="Pipelines\BucketOperationProcessor.cs" />
     <Compile Include="Pipelines\CreateBucket\CreateBucketProcessor.cs" />
     <Compile Include="Pipelines\SyncBucket\SyncBucketProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Types\IItem.cs" />
     <Compile Include="Types\ITypeDefinition.cs" />
     <Compile Include="TypeCreator\ObjectCreator.cs" />
     <Compile Include="TypeCreator\IObjectCreator.cs" />
