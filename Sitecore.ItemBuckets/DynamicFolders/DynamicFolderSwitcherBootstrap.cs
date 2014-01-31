@@ -22,11 +22,11 @@ namespace Sitecore.ItemBuckets.DynamicFolders
 
         public string GetFolderPath(Data.ID newItemId, Data.ID parentItemId, DateTime creationDateOfNewItem)
         {
-            var bucket = Types.BucketItem.Create(parentItemId);
+            var bucket = new Types.BucketItem(Sitecore.Context.ContentDatabase.GetItem(parentItemId));
 
             var dynamicFolderPathResolver = switcher.GetFolderPathResolver(bucket);
 
-            return dynamicFolderPathResolver.GetFolderPath( SitecoreItem.Create(newItemId), bucket, creationDateOfNewItem);
+            return dynamicFolderPathResolver.GetFolderPath(BucketItem.Create(newItemId), bucket, creationDateOfNewItem);
         }
     }
 }

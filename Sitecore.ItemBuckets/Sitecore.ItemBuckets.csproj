@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DynamicFolderPathResolvers\DateBasedDynamicFolderResolver.cs" />
+    <Compile Include="DynamicFolderPathResolvers\GuidBasedDynamicFolderResolver.cs" />
     <Compile Include="DynamicFolders\DateBasedDynamicFolder.cs" />
     <Compile Include="DynamicFolders\DynamicFolderCache.cs" />
     <Compile Include="DynamicFolders\DynamicFolderSwitcher.cs" />
