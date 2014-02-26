@@ -27,7 +27,7 @@ As shown above, GuidBased provides a Depth parametre, DateBased provides
 
 
 
-All items now have an extra field in the Standard Template, within the Buckets section, where you can defined which of the different folder creation schemes should be used.
+All items now have an extra field in the Standard Template, within the Buckets section, where you can define which of the different folder creation schemes should be used.
 
 
 ###Coming next...
