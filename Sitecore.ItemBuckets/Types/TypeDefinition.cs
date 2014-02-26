@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
+using Sitecore.ItemBuckets.Helpers;
 using Sitecore.ItemBuckets.Types;
 
 namespace Sitecore.ItemBuckets.Types
@@ -18,14 +19,14 @@ namespace Sitecore.ItemBuckets.Types
         {
             get
             {
-                return InnerItem["{5D12AB04-12F5-4A9C-B8D7-4A0889FD4E49}"];
+                return InnerItem[References.TypeName];
             }
         }
         public NameValueCollection Parameters
         {
             get
             {
-                NameValueListField parameters = InnerItem.Fields["{8C0043E6-DC96-4381-BDA7-16E660EC67BB}"];
+                NameValueListField parameters = InnerItem.Fields[References.Parameters];
                 if (parameters != null)
                 {
                     return parameters.NameValues;
