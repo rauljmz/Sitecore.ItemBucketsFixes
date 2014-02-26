@@ -17,7 +17,7 @@ namespace Sitecore.ItemBuckets.DynamicFolderPathResolvers
         public string GetFolderPath(Types.IItem newItemId, Types.IBucket parentItemId, DateTime creationDateOfNewItem)
         {
             var i = int.Parse(Depth);
-            return newItemId.Id.ToString().ToString().Take(i).Zip(new String('/', i), (a, b) => string.Concat(a, b)).Aggregate((a, c) => a += c).TrimEnd('/');
+            return newItemId.Id.ToString().Take(i).Zip(new String('/', i), (a, b) => string.Concat(a, b)).Aggregate((a, c) => a += c).TrimEnd('/');
             
         }
     }
