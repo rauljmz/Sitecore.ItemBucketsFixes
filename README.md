@@ -19,10 +19,11 @@ public class GuidBasedDynamicFolderResolver : IDynamicFolderResolver
 ```
 
 As shown above, GuidBased provides a Depth parametre, DateBased provides
+
 |Parametre| Default|
-|-------|-------|
-|Format |yyyy/MM/dd/HH/mm|
-|Field | __Created |
+|---------|----------|
+|Format   |yyyy/MM/dd/HH/mm|
+|Field    | __Created |
 
 
 
