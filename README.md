@@ -16,6 +16,7 @@ public class GuidBasedDynamicFolderResolver : IDynamicFolderResolver
 {
    public string Depth { get; set; }
 ...
+```
 
 As shown above, GuidBased provides a Depth parametre, DateBased provides
 |Parametre| Default|
