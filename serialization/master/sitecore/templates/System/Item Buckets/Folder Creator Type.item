@@ -22,11 +22,11 @@ name: __Icon
 key: __icon
 content-length: 36
 
-Applications/16x16/control_panel.png
+Applications/32x32/control_panel.png
 ----version----
 language: en
 version: 1
-revision: 1a382757-e452-40e0-9e65-2cab920b545f
+revision: b5fe7326-dfdc-44a3-a41e-453797a7d8e2
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-1a382757-e452-40e0-9e65-2cab920b545f
+b5fe7326-dfdc-44a3-a41e-453797a7d8e2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140225T184750:635289508707560813
+20140226T140222:635290201423783084
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
