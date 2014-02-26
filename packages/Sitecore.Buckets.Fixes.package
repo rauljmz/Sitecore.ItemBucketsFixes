@@ -1,0 +1,82 @@
+<project site="traincore" format="Zip Package">
+  <Metadata>
+    <metadata>
+      <PackageName>Sitecore.Buckets.Fixes</PackageName>
+      <Author>RJ</Author>
+      <Version>1.0</Version>
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme />
+      <Publisher />
+      <PostStep />
+      <PackageID />
+    </metadata>
+  </Metadata>
+  <SaveProject>True</SaveProject>
+  <Sources>
+    <xitems>
+      <Entries>
+        <x-item>/master/sitecore/system/Settings/Buckets/Folder Creators/{344C5310-71E7-4E47-B9DE-2DA596D4346B}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Buckets/Folder Creators/Date Based/{FD3F6B0D-9117-456A-A7F0-3EC0B49D683C}/invariant/0</x-item>
+        <x-item>/master/sitecore/system/Settings/Buckets/Folder Creators/Guid Based/{8F5EC313-42AF-4E58-9D13-E61C9DC4F9B2}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/System/Item Buckets/Folder Creator Type/{3EA0CC05-B0FD-41D5-9623-71C7B0B7E90B}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/System/Item Buckets/Folder Creator Type/Data/{7874EE2C-EE7B-409E-B894-7C9DE09EFD24}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/System/Item Buckets/Folder Creator Type/Data/Type/{E8CD8997-56FA-4980-9239-63427BD367FC}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/System/Item Buckets/Folder Creator Type/Data/Parametres/{4919CB9D-3A83-46D7-BDE3-C0040AAD17A9}/invariant/0</x-item>
+        <x-item>/master/sitecore/templates/System/Templates/Sections/Item Buckets/Item Buckets/__DynamicFolderPath/{B0497F09-ED12-4203-9326-A98DAF5371A1}/invariant/0</x-item>
+      </Entries>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Items</Name>
+    </xitems>
+    <xfiles>
+      <Entries>
+        <x-item>/App_Config/Include/Sitecore.Buckets.Patch.config</x-item>
+        <x-item>/bin/Sitecore.ItemBuckets.dll</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root />
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Files</Name>
+    </xfiles>
+  </Sources>
+  <Converter>
+    <TrivialConverter>
+      <Transforms />
+    </TrivialConverter>
+  </Converter>
+  <Include />
+  <Exclude />
+  <Name />
+</project>
