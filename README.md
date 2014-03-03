@@ -29,7 +29,10 @@ As shown above, GuidBased provides a Depth parametre, DateBased provides
 
 All items now have an extra field in the Standard Template, within the Buckets section, where you can define which of the different folder creation schemes should be used.
 
+###Settings access
+
+I have added a new button in the Item Buckets chunk to get easy access to the configuration settings, so you don't have to enable 'view standard fields'.
 
 ###Coming next...
 
-URL resolution
+URL resolution. But if you can wait, check Alistair's excellent post: http://adeneys.wordpress.com/2013/07/19/item-buckets-and-urls/
