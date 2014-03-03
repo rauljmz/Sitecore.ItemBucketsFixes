@@ -3,7 +3,7 @@
     <metadata>
       <PackageName>Sitecore.Buckets.Fixes</PackageName>
       <Author>RJ</Author>
-      <Version>1.0</Version>
+      <Version>1.1</Version>
       <Revision />
       <License />
       <Comment />
@@ -26,6 +26,7 @@
         <x-item>/master/sitecore/templates/System/Item Buckets/Folder Creator Type/Data/Type/{E8CD8997-56FA-4980-9239-63427BD367FC}/invariant/0</x-item>
         <x-item>/master/sitecore/templates/System/Item Buckets/Folder Creator Type/Data/Parametres/{4919CB9D-3A83-46D7-BDE3-C0040AAD17A9}/invariant/0</x-item>
         <x-item>/master/sitecore/templates/System/Templates/Sections/Item Buckets/Item Buckets/__DynamicFolderPath/{B0497F09-ED12-4203-9326-A98DAF5371A1}/invariant/0</x-item>
+        <x-item>/core/sitecore/content/Applications/Content Editor/Ribbons/Chunks/Item Buckets/Settings/{E8C2C4F1-30CA-492A-B329-174E5395E27C}/invariant/0</x-item>
       </Entries>
       <SkipVersions>False</SkipVersions>
       <Converter>

@@ -4,14 +4,11 @@
     using System.Collections.Specialized;
     using Sitecore.Data;
     using Sitecore.Data.Items;
-    using Sitecore.Diagnostics;
     using Sitecore.Shell.Applications.ContentManager;
-    using Sitecore.Shell.Applications.WebEdit;
     using Sitecore.Shell.Framework.Commands;
     using Sitecore.Web.UI.Sheer;
     using System.Linq;
-
-    // TODO: \App_Config\include\EditFrameButton.config created automatically when creating EditFrameButton class. In this config include file, specify command name attribute value
+    using Sitecore.ItemBuckets.Helpers;
 
     public class EditFrameButton : Command
     {
@@ -47,13 +44,18 @@
         {
             if (item[Sitecore.Buckets.Util.Constants.IsBucket] == "1")
             {
-                return new string[] {                    
-                    Sitecore.Buckets.Util.Constants.FacetsField
-
+                return new string[] {   
+                    References.__DynamicFolderPath.ToString(),
+                    Sitecore.Buckets.Util.Constants.DefaultQuery,
+                    Sitecore.Buckets.Util.Constants.DefaultFilter,
+                    Sitecore.Buckets.Util.Constants.FacetsField,
+                    Sitecore.Buckets.Util.Constants.EnabledView,
+                    Sitecore.Buckets.Util.Constants.QuickActionField,                    
                 };
             }
             return new string[]{ 
-                Sitecore.Buckets.Util.Constants.BucketableField
+                Sitecore.Buckets.Util.Constants.BucketableField,
+                Sitecore.Buckets.Util.Constants.ShouldNotOrganizeInBucket
             };
         }
 
